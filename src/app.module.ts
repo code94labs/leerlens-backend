@@ -13,7 +13,7 @@ import { UserService } from './user/user.service';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'Nazhimkalam12345',
+      password: '',
       database: 'leerlens',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
