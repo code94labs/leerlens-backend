@@ -10,15 +10,38 @@ export class UserService {
     private readonly userRepository: Repository<User>,
   ) {}
 
-  async findAll(): Promise<User[]> {
+  async getAllUsers(): Promise<User[]> {
     return await this.userRepository.find();
   }
 
-  async create(user: User): Promise<User> {
+  async getUserById(id: number): Promise<User> {
+    return await this.userRepository.findOne({ where: { id } });
+  }
+
+  async createUser(user: User): Promise<User> {
     return await this.userRepository.save(user);
   }
 
-  async remove(id: number): Promise<void> {
+  async updateUser(id: number, userData: Partial<User>): Promise<User | null> {
+    try {
+      let user = await this.userRepository.findOne({ where: { id } });
+
+      if (!user) {
+        return null;
+      }
+
+      // Update user data with the provided userData
+      Object.assign(user, userData);
+
+      user = await this.userRepository.save(user);
+
+      return user;
+    } catch (error) {
+      throw new Error(`Failed to update user: ${error.message}`);
+    }
+  }
+
+  async deleteUser(id: number): Promise<void> {
     await this.userRepository.delete(id);
   }
 }
