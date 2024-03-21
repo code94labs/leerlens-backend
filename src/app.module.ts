@@ -5,6 +5,17 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/user.entity';
 import { UserController } from './user/user.controller';
 import { UserService } from './user/user.service';
+import { StudentFormInfo } from './student-form-info/studentFormInfo.entity';
+import { StudentResponse } from './responses/responses.entity';
+import { FormMetadata } from './form-metadata/formMetadata.entity';
+import {
+  Evaluation,
+  Normgroup,
+  PostIntervention,
+  PreIntervention,
+} from './questionnaire/questionnaire.entity';
+import { QuestionnaireController } from './questionnaire/questionnaire.controller';
+import { QuestionnaireService } from './questionnaire/questionnaire.service';
 
 @Module({
   imports: [
@@ -18,10 +29,18 @@ import { UserService } from './user/user.service';
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([User]),
+    TypeOrmModule.forFeature([
+      User,
+      StudentFormInfo,
+      StudentResponse,
+      FormMetadata,
+      PreIntervention,
+      PostIntervention,
+      Evaluation,
+      Normgroup,
+    ]),
   ],
-  controllers: [AppController, UserController],
-  providers: [AppService, UserService],
+  controllers: [AppController, UserController, QuestionnaireController],
+  providers: [AppService, UserService, QuestionnaireService],
 })
-
 export class AppModule {}
