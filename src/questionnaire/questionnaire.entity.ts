@@ -23,6 +23,10 @@ export class PreIntervention {
   /* We will perform a soft delete here */
   @Column({ default: false })
   isDelete: boolean;
+
+  /* This set id will be used to categories to 2 question sets based on the remind program (either 1 or 2) */
+  @Column()
+  questionSetId: number;
 }
 
 @Entity()
@@ -46,6 +50,10 @@ export class PostIntervention {
   /* We will perform a soft delete here */
   @Column({ default: false })
   isDelete: boolean;
+
+  /* This set id will be used to categories to 2 question sets based on the remind program (either 1 or 2) */
+  @Column()
+  questionSetId: number;
 }
 
 @Entity()
@@ -69,6 +77,10 @@ export class Evaluation {
   /* We will perform a soft delete here */
   @Column({ default: false })
   isDelete: boolean;
+
+  /* This set id will be used to categories to 2 question sets based on the remind program (either 1 or 2) */
+  @Column()
+  questionSetId: number;
 }
 
 @Entity()
@@ -92,4 +104,8 @@ export class Normgroup {
   /* We will perform a soft delete here */
   @Column({ default: false })
   isDelete: boolean;
+
+  /* This set id will be used to categories to 2 question sets based on the remind program (either 1 or 2) */
+  @Column()
+  questionSetId: number;
 }
