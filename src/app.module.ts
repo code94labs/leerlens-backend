@@ -21,11 +21,11 @@ import { StudentFormInfoService } from './student-form-info/studentFormInfo.serv
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: '',
-      database: 'leerlens',
+      host: 'leerlens-nazhimkalam-4ea7.a.aivencloud.com',
+      port: 26947,
+      username: 'avnadmin',
+      password: 'AVNS_f_KNE2ht_3vKwAn90F3',
+      database: 'defaultdb',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
