@@ -10,7 +10,7 @@ export class StudentResponse {
   formType: FormEvaluation;
 
   @Column({ type: 'json', nullable: true })
-  responses: { questionnaireId: number; answerScale: number }[];
+  responses: { questionnaireId: number; answerScale: number, questionSetId: number, questionSection: number }[];
 
   @Column({ type: 'json', nullable: true })
   studentDetails: { questionId: number; answer: string }[];

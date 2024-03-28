@@ -22,3 +22,9 @@ export enum UserRole {
   SuperAdmin = 0,
   Admin = 1,
 }
+
+/* We will be using this to differentiate the 2 sets of questions */
+export enum RemindProgramQuestionSetID {
+  QuestionSetOne = 0,
+  QuestionSetTwo = 1,
+}

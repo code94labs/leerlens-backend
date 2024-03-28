@@ -6,7 +6,7 @@ export class FormMetadata {
   @PrimaryGeneratedColumn()
   id: number;
 
-  /* This column will be present for the SectionTypes */
+  /* This column will be present for the SectionTypes: - Personal, Question set one, Question set two, program and sup, final*/
   @Column()
   personalDetailsQH: string;
 

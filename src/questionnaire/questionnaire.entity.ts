@@ -27,6 +27,10 @@ export class PreIntervention {
   /* This set id will be used to categories to 2 question sets based on the remind program (either 1 or 2) */
   @Column()
   questionSetId: number;
+
+   /* We have 2 sets for question Page 1 and page 2 in every form for those we need to differentiate */
+   @Column()
+   questionSection: number
 }
 
 @Entity()
@@ -54,6 +58,10 @@ export class PostIntervention {
   /* This set id will be used to categories to 2 question sets based on the remind program (either 1 or 2) */
   @Column()
   questionSetId: number;
+
+   /* We have 2 sets for question Page 1 and page 2 in every form for those we need to differentiate */
+   @Column()
+   questionSection: number
 }
 
 @Entity()
@@ -81,6 +89,10 @@ export class Evaluation {
   /* This set id will be used to categories to 2 question sets based on the remind program (either 1 or 2) */
   @Column()
   questionSetId: number;
+
+  /* We have 2 sets for question Page 1 and page 2 in every form for those we need to differentiate */
+  @Column()
+  questionSection: number
 }
 
 @Entity()
@@ -108,4 +120,8 @@ export class Normgroup {
   /* This set id will be used to categories to 2 question sets based on the remind program (either 1 or 2) */
   @Column()
   questionSetId: number;
+
+   /* We have 2 sets for question Page 1 and page 2 in every form for those we need to differentiate */
+   @Column()
+   questionSection: number
 }

@@ -24,7 +24,7 @@ export class StudentFormInfo {
 
   /* IF the FieldType <- Dropdown */
   @Column({ type: 'json', nullable: true })
-  dropdownOptions: string[];
+  dropdownOptions: { id: number; item: string; isDelete: boolean }[];
 
   /* IF the FieldType <- Scale */
   @Column({ default: 1 })

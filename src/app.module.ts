@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/user.entity';
 import { UserController } from './user/user.controller';
@@ -16,6 +14,8 @@ import {
 } from './questionnaire/questionnaire.entity';
 import { QuestionnaireController } from './questionnaire/questionnaire.controller';
 import { QuestionnaireService } from './questionnaire/questionnaire.service';
+import { StudentFormInfoController } from './student-form-info/studentFormInfo.controller';
+import { StudentFormInfoService } from './student-form-info/studentFormInfo.service';
 
 @Module({
   imports: [
@@ -24,7 +24,7 @@ import { QuestionnaireService } from './questionnaire/questionnaire.service';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'Nazhimkalam12345',
+      password: '',
       database: 'leerlens',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
@@ -40,7 +40,15 @@ import { QuestionnaireService } from './questionnaire/questionnaire.service';
       Normgroup,
     ]),
   ],
-  controllers: [AppController, UserController, QuestionnaireController],
-  providers: [AppService, UserService, QuestionnaireService],
+  controllers: [
+    UserController,
+    QuestionnaireController,
+    StudentFormInfoController,
+  ],
+  providers: [
+    UserService,
+    QuestionnaireService,
+    StudentFormInfoService,
+  ],
 })
 export class AppModule {}
